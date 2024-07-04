@@ -1,9 +1,13 @@
 {
   description = "A template that shows all standard flake outputs";
 
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs";
   inputs.c-hello.url = "github:NixOS/templates?dir=c-hello";
+  inputs.c-hello.inputs.nixpkgs.follows = "nixpkgs";
   inputs.rust-web-server.url = "github:NixOS/templates?dir=rust-web-server";
+  inputs.rust-web-server.inputs.nixpkgs.follows = "nixpkgs";
   inputs.nix-bundle.url = "github:NixOS/bundlers";
+  inputs.nix-bundle.inputs.nixpkgs.follows = "nixpkgs";
 
   # Work-in-progress: refer to parent/sibling flakes in the same repository
   # inputs.c-hello.url = "path:../c-hello";
