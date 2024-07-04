@@ -59,14 +59,10 @@
     # nixosConfigurations."<hostname>".config.system.build.toplevel must be a derivation
     nixosConfigurations.example = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [{boot.isContainer=true;}] ;
+      modules = [
+        self.nixosModule
+      ] ;
     };
-
-    # Utilized by `nix develop`
-    devShell.x86_64-linux = rust-web-server.devShell.x86_64-linux;
-
-    # Utilized by `nix develop .#<name>`
-    devShells.x86_64-linux.example = self.devShell.x86_64-linux;
 
     # Utilized by Hydra build jobs
     hydraJobs.example.x86_64-linux = self.defaultPackage.x86_64-linux;
