@@ -63,6 +63,7 @@
         ({ ... } : {
           users.users.jkarni = {
             description = "Julian K. Arni";
+            isNormalUser = true;
             openssh.authorizedKeys.keys = [
              "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIVpNqdbM7uE1xkKoXztoaAtKtDHoqHS3DrzxYKsDgxa jkarni@garnix.io"
             ];
