@@ -60,7 +60,13 @@
     nixosConfigurations.example = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        self.nixosModule
+        ({ ... } : {
+          fileSystems."/" = {
+            device = "/dev/sda1";
+            fsType = "ext4";
+          };
+          boot.loader.grub.device = "/dev/sda";
+         })
       ] ;
     };
 
