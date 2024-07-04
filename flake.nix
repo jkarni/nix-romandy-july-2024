@@ -63,11 +63,11 @@
         ({ ... } : {
           users.users.jkarni = {
             description = "Julian K. Arni";
-            services.openssh.enable = true;
             openssh.authorizedKeys.keys = [
              "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIVpNqdbM7uE1xkKoXztoaAtKtDHoqHS3DrzxYKsDgxa jkarni@garnix.io"
             ];
           };
+          services.openssh.enable = true;
           fileSystems."/" = {
             device = "/dev/sda1";
             fsType = "ext4";
