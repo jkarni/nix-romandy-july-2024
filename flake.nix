@@ -30,8 +30,6 @@
       overlay = final: prev: {
 
         rust-web-server = with final; final.callPackage ({ inShell ? false }: stdenv.mkDerivation rec {
-          name = "rust-web-server-${version}";
-
           # In 'nix develop', we don't need a copy of the source tree
           # in the Nix store.
           src = if inShell then null else ./.;
