@@ -1,5 +1,4 @@
 servers:
   - configuration: example
     deployment:
-      type: on-branch
-      branch: pre-test
+      type: on-pull-request
