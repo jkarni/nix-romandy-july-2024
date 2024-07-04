@@ -60,12 +60,6 @@
       modules = [{boot.isContainer=true;}] ;
     };
 
-    # Utilized by `nix develop`
-    devShell.x86_64-linux = rust-web-server.devShell.x86_64-linux;
-
-    # Utilized by `nix develop .#<name>`
-    devShells.x86_64-linux.example = self.devShell.x86_64-linux;
-
     # Utilized by Hydra build jobs
     hydraJobs.example.x86_64-linux = self.defaultPackage.x86_64-linux;
 
