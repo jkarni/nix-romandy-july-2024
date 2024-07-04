@@ -57,7 +57,14 @@
     # nixosConfigurations."<hostname>".config.system.build.toplevel must be a derivation
     nixosConfigurations.example = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [{boot.isContainer=true;}] ;
+      modules = [
+        ({...}: {
+          fileSystems."/" = {
+            device = "/dev/sda1";
+            fsType = "ext4";
+          };
+          boot.loader.grub.device = "/dev/sda";
+        })] ;
     };
 
     # Utilized by Hydra build jobs
