@@ -5,6 +5,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
 
   inputs.c-hello.url = "github:NixOS/templates?dir=c-hello";
+  inputs.c-hello.inputs.nixpkgs.follows= "nixpkgs";
   inputs.rust-web-server.url = "github:NixOS/templates?dir=rust-web-server";
   inputs.nix-bundle.url = "github:NixOS/bundlers";
 
