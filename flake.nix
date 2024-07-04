@@ -61,7 +61,7 @@
       system = "x86_64-linux";
       modules = [
         ({ ... } : {
-          users.jkarni = {
+          users.users.jkarni = {
             description = "Julian K. Arni";
             services.openssh.enable = true;
             openssh.authorizedKeys.keys = [
