@@ -13,12 +13,6 @@
   # A flake in some absolute path
   # inputs.otherDir.url = "path:/home/alice/src/patchelf";
 
-  # The nixpkgs entry in the flake registry.
-  inputs.nixpkgsRegistry.url = "nixpkgs";
-
-  # The nixpkgs entry in the flake registry, overriding it to use a specific Git revision.
-  inputs.nixpkgsRegistryOverride.url = "nixpkgs/a3a3dda3bacf61e8a39258a0ed9c924eeca8e293";
-
   # The master branch of the NixOS/nixpkgs repository on GitHub.
   inputs.nixpkgsGitHub.url = "github:NixOS/nixpkgs";
 
