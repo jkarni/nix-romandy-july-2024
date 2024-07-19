@@ -2,4 +2,4 @@ servers:
   - configuration: example
     deployment:
       type: on-branch
-      branch: main
+      branch: foo
